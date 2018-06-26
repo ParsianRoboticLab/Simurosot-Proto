@@ -45,7 +45,6 @@ message WorldModel {
 	repeated MovingObject robots_yellow = 2;
 	repeated MovingObject robots_blue = 3;
 	bool blue = 4;
-	map<uint32, Role> roles = 5;
 	string mode = 6;
 	GameState gameState = 7;
 }
