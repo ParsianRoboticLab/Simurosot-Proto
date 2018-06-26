@@ -1,5 +1,4 @@
 syntax = "proto3";
-package parsian_simurosot;
 
 message Ball {
 	float x = 1;

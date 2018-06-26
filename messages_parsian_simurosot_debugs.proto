@@ -1,83 +1,83 @@
-syntax = "proto3"
+syntax = "proto3";
 
 message Color {
-	float r = 0; // [0-1]
-	float g = 1; // [0-1]
+	float r = 1; // [0-1]
+	float g = 2; // [0-1]
 	float b = 3; // [0-1]
 	float a = 4; // [0-1] 
 }
 
 message Vec2 {
-	float x = 0;
-	float y = 1;
+	float x = 1;
+	float y = 2;
 }
 
 message Vec2D {
-	float x = 0;
-	float y = 1;
-	Color color;
+	float x     = 1;
+	float y     = 2;
+	Color color = 3;
 }
 
 message Cir2D {
-	Vec2  center = 0;
-	float startAngle = 1;
-	float endAngle = 2;
-	float radius = 3;
-	bool fill = 4;
-	Color color;
+	Vec2  center     = 1;
+	float startAngle = 2;
+	float endAngle   = 3;
+	float radius     = 4;
+	bool fill        = 5;
+	Color color      = 6;
 }
 
 message Seg2D {
-	Vec2 origin = 0;
-	Vec2 terminal = 1;
-	Color color = 2;
+	Vec2 origin   = 1;
+	Vec2 terminal = 2;
+	Color color   = 3;
 }
 
 message Rec2D {
-	Vec2 topLeft = 0;
-	Vec2 BotRight = 1;
-	Color color = 2;
-	bool fill = 3;
+	Vec2 topLeft  = 1;
+	Vec2 BotRight = 2;
+	Color color   = 3;
+	bool fill     = 4;
 }
 
 message Tex2D {
-	Vec2 pos = 0;
-	float size = 1;
-	Color color = 2;
-	string data;
+	Vec2 pos    = 1;
+	float size  = 2;
+	Color color = 3;
+	string data = 4;
 }
 
 message Pol2D {
 	repeated Vec2 vectors = 1;
-	Color color = 2;
-	bool fill = 3;
+	Color color           = 2;
+	bool fill             = 3;
 }
 
 message Draws {
-	repeated Vec2D vectors  = 0;
-	repeated Cir2D circles  = 1;
-	repeated Seg2D segments = 2;
-	repeated Rec2D rects    = 3;
-	repeated Pol2D polygons = 4;
-	repeated Tex2D texts    = 5;
+	repeated Vec2D vectors  = 1;
+	repeated Cir2D circles  = 2;
+	repeated Seg2D segments = 3;
+	repeated Rec2D rects    = 4;
+	repeated Pol2D polygons = 5;
+	repeated Tex2D texts    = 6;
 }
 
 enum LogLevel {
 	DEBUG = 0;
-	INFO = 1;
-	WARN = 2;
+	INFO  = 1;
+	WARN  = 2;
 	ERROR = 3;
 	FATAL = 4;
 }
 
 message Log {
-	LogLevel level = 0;
-	string msg;
-	string file;
-	string function;
-	string line;
+	LogLevel level  = 1;
+	string msg      = 2;
+	string file     = 3;
+	string function = 4;
+	string line     = 5;
 }
 
 message Logs {
-	repeated Log msgs;
+	repeated Log msgs = 1;
 }
