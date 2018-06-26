@@ -7,13 +7,14 @@ message Ball {
 
 message Robot {
 	uint32 id = 1;
-	float x = 2;
-	float y = 3;
+	float x   = 2;
+	float y   = 3;
+	float ang = 4;
 }
 
 message Frame {
-	uint32 frame_number = 1;
-	Ball ball = 2;
+	uint32 frame_number          = 1;
+	Ball ball                    = 2;
 	repeated Robot robots_yellow = 3;
-	repeated Robot robots_blue = 4;
+	repeated Robot robots_blue   = 4;
 }
